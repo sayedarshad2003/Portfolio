@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saiyed Arshad · Futuristic Developer</title>
+  <!-- Tailwind via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    /* Reset & base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #050505;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    /* Glassmorphism utility */
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    .glass-card:hover {
+      border-color: rgba(0, 245, 255, 0.3);
+      box-shadow: 0 0 40px -10px rgba(0, 245, 255, 0.15);
+    }
+    .text-gradient {
+      background: linear-gradient(135deg, #00F5FF 0%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .glow-cyan {
+      box-shadow: 0 0 30px -5px rgba(0, 245, 255, 0.2);
+    }
+    .border-glow {
+      border: 1px solid rgba(0, 245, 255, 0.2);
+    }
+    .bg-dark { background: #050505; }
+    /* custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #0a0a0a; }
+    ::-webkit-scrollbar-thumb { background: #6C63FF; border-radius: 12px; }
+    /* typing cursor */
+    .typing-cursor {
+      border-right: 2px solid #00F5FF;
+      animation: blink 0.8s step-end infinite;
+    }
+    @keyframes blink {
+      0%, 100% { border-color: #00F5FF; }
+      50% { border-color: transparent; }
+    }
+    /* floating animation */
+    .float-slow {
+      animation: floatSlow 6s ease-in-out infinite;
+    }
+    @keyframes floatSlow {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-12px) rotate(2deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    .float-medium {
+      animation: floatMedium 8s ease-in-out infinite;
+    }
+    @keyframes floatMedium {
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-18px) rotate(-3deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
+    }
+    /* magnetic button effect (pure css tilt) */
+    .magnetic {
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+    .magnetic:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 10px 30px -10px rgba(0, 245, 255, 0.3);
+    }
+    /* project card tilt (simulated) */
+    .project-card {
+      transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+    }
+    .project-card:hover {
+      transform: perspective(800px) rotateX(2deg) rotateY(4deg) scale(1.02);
+      box-shadow: 0 20px 50px -15px rgba(0, 245, 255, 0.25);
+    }
+    /* scroll progress */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00F5FF, #8B5CF6);
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s;
+    }
+    /* neon glow line */
+    .neon-line {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #00F5FF, #8B5CF6, transparent);
+      opacity: 0.6;
+    }
+    /* particle background (pure css) */
+    .particle-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: #00F5FF;
+      border-radius: 50%;
+      opacity: 0.2;
+      animation: particleFloat 20s infinite linear;
+    }
+    @keyframes particleFloat {
+      0% { transform: translateY(100vh) scale(0); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div id="scroll-progress"></div>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-dark">
+  <!-- Particle background (CSS) -->
+  <div class="particle-bg">
+    <div class="particle" style="left:10%; animation-duration:18s; animation-delay:0s;"></div>
+    <div class="particle" style="left:25%; animation-duration:22s; animation-delay:2s; background:#8B5CF6;"></div>
+    <div class="particle" style="left:40%; animation-duration:20s; animation-delay:4s;"></div>
+    <div class="particle" style="left:55%; animation-duration:25s; animation-delay:1s; background:#6C63FF;"></div>
+    <div class="particle" style="left:70%; animation-duration:19s; animation-delay:3s;"></div>
+    <div class="particle" style="left:85%; animation-duration:23s; animation-delay:5s; background:#8B5CF6;"></div>
+    <div class="particle" style="left:15%; animation-duration:21s; animation-delay:6s;"></div>
+    <div class="particle" style="left:50%; animation-duration:24s; animation-delay:7s; background:#00F5FF;"></div>
+  </div>
+
+  <!-- Glowing orbs (3D illusion) -->
+  <div class="absolute top-20 left-10 w-64 h-64 rounded-full bg-cyan-500/10 blur-3xl animate-pulse"></div>
+  <div class="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-purple-600/10 blur-3xl animate-pulse delay-1000"></div>
+
+  <!-- Floating 3D cubes (CSS) -->
+  <div class="absolute top-1/4 left-[15%] w-16 h-16 border-2 border-cyan-400/20 rounded-xl rotate-12 float-slow"></div>
+  <div class="absolute bottom-1/3 right-[10%] w-20 h-20 border-2 border-purple-400/20 rounded-full float-medium"></div>
+  <div class="absolute top-1/2 left-[5%] w-10 h-10 border-2 border-cyan-300/20 rotate-45 float-slow"></div>
+
+  <!-- overlay gradient -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-transparent to-[#050505]/80 z-10"></div>
+
+  <div class="relative z-20 max-w-6xl mx-auto px-6 text-center">
+    <!-- Animated name -->
+    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight">
+      <span class="text-gradient">Saiyed Arshad</span>
+    </h1>
+    <p class="text-xl md:text-3xl mt-4 text-white/80 font-light">
+      Software Developer · Full Stack Engineer · SQL Expert
+    </p>
+    <!-- Typing animation -->
+    <div class="mt-6 text-2xl md:text-4xl font-medium text-cyan-300 h-14 flex items-center justify-center gap-2">
+      <span>⚡</span>
+      <span id="typing-text" class="typing-cursor pr-2"></span>
+    </div>
+    <!-- CTA -->
+    <div class="mt-10 flex flex-wrap justify-center gap-5">
+      <a href="#projects" class="magnetic px-8 py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-bold transition shadow-lg shadow-cyan-500/30">View Projects</a>
+      <a href="#" class="magnetic px-8 py-3 rounded-full border border-cyan-400 text-cyan-400 hover:bg-cyan-400/10 transition">Download Resume</a>
+      <a href="#contact" class="magnetic px-8 py-3 rounded-full bg-white/5 backdrop-blur border border-white/10 hover:border-cyan-400 transition">Contact Me</a>
+    </div>
+    <!-- Social Icons animated -->
+    <div class="flex justify-center gap-6 mt-8 text-2xl text-white/60">
+      <a href="#" class="hover:text-cyan-400 transition-transform hover:scale-125"><i class="fab fa-github"></i></a>
+      <a href="#" class="hover:text-cyan-400 transition-transform hover:scale-125"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="hover:text-cyan-400 transition-transform hover:scale-125"><i class="fas fa-envelope"></i></a>
+      <a href="#" class="hover:text-cyan-400 transition-transform hover:scale-125"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white/30 animate-bounce">
+    <i class="fas fa-chevron-down text-xl"></i>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about" class="py-28 px-6 max-w-6xl mx-auto relative">
+  <div class="neon-line w-full max-w-xs mx-auto mb-4"></div>
+  <h2 class="text-5xl font-bold text-gradient text-center mb-16">About Me</h2>
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6 text-white/80 text-lg leading-relaxed">
+      <p>Results-driven Software Developer with <span class="text-cyan-400 font-semibold">3+ years</span> of experience designing enterprise-grade web applications using ASP.NET, C#, and SQL Server.</p>
+      <p>Proven expertise in HRMS, accounting platforms, real-time dashboards, POS, and LIMS solutions for multi-tenant business environments.</p>
+      <div class="grid grid-cols-2 gap-4 mt-6">
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-3xl font-bold text-cyan-400">3+</div>
+          <div class="text-sm text-white/50">Years Experience</div>
+        </div>
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-3xl font-bold text-cyan-400">15+</div>
+          <div class="text-sm text-white/50">Enterprise Modules</div>
+        </div>
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-3xl font-bold text-cyan-400">100+</div>
+          <div class="text-sm text-white/50">Features Delivered</div>
+        </div>
+        <div class="glass p-4 rounded-xl text-center">
+          <div class="text-3xl font-bold text-cyan-400">40%</div>
+          <div class="text-sm text-white/50">Query Optimization</div>
+        </div>
+      </div>
+    </div>
+    <div class="relative h-80 rounded-2xl overflow-hidden glass-card flex items-center justify-center">
+      <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-purple-600/20"></div>
+      <div class="text-8xl opacity-30">👨‍💻</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TECH STACK (floating glass spheres) ===== -->
+<section id="tech" class="py-28 px-6 max-w-7xl mx-auto">
+  <div class="neon-line w-full max-w-xs mx-auto mb-4"></div>
+  <h2 class="text-5xl font-bold text-gradient text-center mb-16">Tech Stack</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">C#</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">ASP.NET</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">ASP.NET Core</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">SQL Server</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">SignalR</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">Bootstrap</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">JavaScript</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">jQuery</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">React</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">Git</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">GitHub</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">Visual Studio</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">REST API</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">Entity Framework</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">LINQ</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">AJAX</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">IIS</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">HTML</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">CSS</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">ClosedXML</span>
+    <span class="glass px-6 py-3 rounded-full border border-white/10 text-sm font-medium text-white/80 hover:border-cyan-400 hover:text-cyan-300 transition-all cursor-default hover:scale-110">iTextSharp</span>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience" class="py-28 px-6 max-w-4xl mx-auto">
+  <div class="neon-line w-full max-w-xs mx-auto mb-4"></div>
+  <h2 class="text-5xl font-bold text-gradient text-center mb-16">Experience</h2>
+  <div class="relative border-l-2 border-cyan-400/30 pl-8 space-y-12">
+    <div class="glass-card p-6 rounded-2xl">
+      <h3 class="text-2xl font-bold text-white">Modern Digital World LLC</h3>
+      <p class="text-cyan-400">Muscat, Oman · May 2022 – Present</p>
+      <ul class="mt-4 space-y-2 text-white/70 list-disc list-inside">
+        <li>Architected full-stack enterprise web apps with ASP.NET Core &amp; WebForms</li>
+        <li>Optimized SQL schemas, reduced report generation time by 40%</li>
+        <li>Integrated REST APIs &amp; payment gateways (Paymob)</li>
+        <li>Real-time dashboards with SignalR &amp; WebSockets</li>
+        <li>Bilingual UIs, PDF/Excel automation, IIS deployment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects" class="py-28 px-6 max-w-7xl mx-auto">
+  <div class="neon-line w-full max-w-xs mx-auto mb-4"></div>
+  <h2 class="text-5xl font-bold text-gradient text-center mb-16">Featured Projects</h2>
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <!-- Project 1 -->
+    <div class="glass-card rounded-2xl overflow-hidden project-card">
+      <div class="h-48 bg-gradient-to-br from-cyan-900/30 to-purple-900/30 flex items-center justify-center text-7xl">🧾</div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-white">Crystal POS</h3>
+        <p class="text-white/60 text-sm mt-2">High-performance POS with barcode, multi-payment, inventory, thermal receipt.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">C#</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">ASP.NET</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SQL</span>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button class="text-sm text-cyan-400 border border-cyan-400/30 px-4 py-1 rounded-full hover:bg-cyan-400/10 transition">Live Demo</button>
+          <button class="text-sm text-white/50 hover:text-white transition">GitHub</button>
+        </div>
+      </div>
+    </div>
+    <!-- Project 2 -->
+    <div class="glass-card rounded-2xl overflow-hidden project-card">
+      <div class="h-48 bg-gradient-to-br from-cyan-900/30 to-purple-900/30 flex items-center justify-center text-7xl">👥</div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-white">HRMS</h3>
+        <p class="text-white/60 text-sm mt-2">Employee records, attendance, payroll, leave management, role-based access.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">ASP.NET</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SQL</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SignalR</span>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button class="text-sm text-cyan-400 border border-cyan-400/30 px-4 py-1 rounded-full hover:bg-cyan-400/10 transition">Live Demo</button>
+          <button class="text-sm text-white/50 hover:text-white transition">GitHub</button>
+        </div>
+      </div>
+    </div>
+    <!-- Project 3 -->
+    <div class="glass-card rounded-2xl overflow-hidden project-card">
+      <div class="h-48 bg-gradient-to-br from-cyan-900/30 to-purple-900/30 flex items-center justify-center text-7xl">📊</div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-white">Accounting Software</h3>
+        <p class="text-white/60 text-sm mt-2">Double-entry, VAT/tax, journal entries, trial balance, Excel/PDF export.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">C#</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SQL</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">ClosedXML</span>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button class="text-sm text-cyan-400 border border-cyan-400/30 px-4 py-1 rounded-full hover:bg-cyan-400/10 transition">Live Demo</button>
+          <button class="text-sm text-white/50 hover:text-white transition">GitHub</button>
+        </div>
+      </div>
+    </div>
+    <!-- Project 4 -->
+    <div class="glass-card rounded-2xl overflow-hidden project-card">
+      <div class="h-48 bg-gradient-to-br from-cyan-900/30 to-purple-900/30 flex items-center justify-center text-7xl">🧪</div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-white">LIMS</h3>
+        <p class="text-white/60 text-sm mt-2">Sample tracking, barcode, QC dashboards, lab reports.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">ASP.NET</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SQL</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">iTextSharp</span>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button class="text-sm text-cyan-400 border border-cyan-400/30 px-4 py-1 rounded-full hover:bg-cyan-400/10 transition">Live Demo</button>
+          <button class="text-sm text-white/50 hover:text-white transition">GitHub</button>
+        </div>
+      </div>
+    </div>
+    <!-- Project 5 -->
+    <div class="glass-card rounded-2xl overflow-hidden project-card">
+      <div class="h-48 bg-gradient-to-br from-cyan-900/30 to-purple-900/30 flex items-center justify-center text-7xl">🍽️</div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-white">Restaurant QR Menu</h3>
+        <p class="text-white/60 text-sm mt-2">Contactless ordering, real-time kitchen notifications, admin panel.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SignalR</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">React</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">QR</span>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button class="text-sm text-cyan-400 border border-cyan-400/30 px-4 py-1 rounded-full hover:bg-cyan-400/10 transition">Live Demo</button>
+          <button class="text-sm text-white/50 hover:text-white transition">GitHub</button>
+        </div>
+      </div>
+    </div>
+    <!-- Project 6 -->
+    <div class="glass-card rounded-2xl overflow-hidden project-card">
+      <div class="h-48 bg-gradient-to-br from-cyan-900/30 to-purple-900/30 flex items-center justify-center text-7xl">🎮</div>
+      <div class="p-6">
+        <h3 class="text-2xl font-bold text-white">GameZone Management</h3>
+        <p class="text-white/60 text-sm mt-2">Slot booking, timer, live occupancy, revenue analytics.</p>
+        <div class="flex flex-wrap gap-2 mt-4">
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SignalR</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">ASP.NET</span>
+          <span class="text-xs bg-cyan-500/10 text-cyan-300 px-3 py-1 rounded-full">SQL</span>
+        </div>
+        <div class="flex gap-4 mt-6">
+          <button class="text-sm text-cyan-400 border border-cyan-400/30 px-4 py-1 rounded-full hover:bg-cyan-400/10 transition">Live Demo</button>
+          <button class="text-sm text-white/50 hover:text-white transition">GitHub</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CORE SKILLS (orbital style) ===== -->
+<section id="skills" class="py-28 px-6 max-w-6xl mx-auto">
+  <div class="neon-line w-full max-w-xs mx-auto mb-4"></div>
+  <h2 class="text-5xl font-bold text-gradient text-center mb-16">Core Skills</h2>
+  <div class="flex flex-wrap justify-center gap-4">
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">Enterprise Solutions</span>
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">Performance Optimization</span>
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">REST APIs</span>
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">SignalR</span>
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">Multi-tenant Architecture</span>
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">Database Design</span>
+    <span class="glass px-8 py-4 rounded-full border border-white/5 text-lg font-medium text-white/80 hover:border-cyan-400 hover:scale-110 transition-all cursor-default">Real-time Systems</span>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-28 px-6 max-w-4xl mx-auto">
+  <div class="neon-line w-full max-w-xs mx-auto mb-4"></div>
+  <h2 class="text-5xl font-bold text-gradient text-center mb-16">Contact</h2>
+  <div class="glass-card p-10 rounded-3xl">
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="space-y-4">
+        <input type="text" placeholder="Name" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-cyan-400 outline-none transition" />
+        <input type="email" placeholder="Email" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-cyan-400 outline-none transition" />
+        <textarea rows="4" placeholder="Message" class="w-full bg-black/40 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-cyan-400 outline-none transition"></textarea>
+        <button class="w-full bg-gradient-to-r from-cyan-500 to-purple-600 text-black font-bold py-3 rounded-xl hover:scale-105 transition">Send</button>
+      </div>
+      <div class="space-y-4 text-white/70">
+        <p><i class="fas fa-envelope mr-2 text-cyan-400"></i> arshadsayed232@gmail.com</p>
+        <p><i class="fas fa-phone mr-2 text-cyan-400"></i> +1 941 3477365</p>
+        <p><i class="fas fa-map-marker-alt mr-2 text-cyan-400"></i> Jaipur, Rajasthan</p>
+        <div class="h-40 rounded-xl bg-black/30 border border-white/5 flex items-center justify-center text-white/20">
+          <i class="fas fa-map-marked-alt text-4xl"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="relative py-12 border-t border-white/5 overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-t from-cyan-500/5 to-transparent"></div>
+  <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+    <p class="text-white/40 text-sm">© 2026 Saiyed Arshad. Crafted with ⚡</p>
+    <div class="flex gap-6 text-white/30 text-xl">
+      <a href="#" class="hover:text-cyan-400 transition"><i class="fab fa-github"></i></a>
+      <a href="#" class="hover:text-cyan-400 transition"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="hover:text-cyan-400 transition"><i class="fas fa-envelope"></i></a>
+      <a href="#" class="hover:text-cyan-400 transition"><i class="fab fa-twitter"></i></a>
+    </div>
+    <a href="#home" class="text-cyan-400 hover:scale-110 transition text-2xl">
+      <i class="fas fa-rocket"></i>
+    </a>
+  </div>
+</footer>
+
+<!-- ===== Typing Animation Script ===== -->
+<script>
+  (function() {
+    const roles = ['ASP.NET WebForms', 'ASP.NET Core', 'SQL Server', 'SignalR', 'REST APIs', 'React', 'Enterprise Software'];
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingEl = document.getElementById('typing-text');
+
+    function typeEffect() {
+      const current = roles[index];
+      if (isDeleting) {
+        typingEl.textContent = current.substring(0, charIndex - 1);
+        charIndex--;
+        if (charIndex === 0) {
+          isDeleting = false;
+          index = (index + 1) % roles.length;
+          setTimeout(typeEffect, 400);
+          return;
+        }
+        setTimeout(typeEffect, 40);
+      } else {
+        typingEl.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          isDeleting = true;
+          setTimeout(typeEffect, 1800);
+          return;
+        }
+        setTimeout(typeEffect, 80);
+      }
+    }
+    typeEffect();
+  })();
+
+  // Scroll progress
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    document.getElementById('scroll-progress').style.width = progress + '%';
+  });
+</script>
+
+</body>
+</html>
