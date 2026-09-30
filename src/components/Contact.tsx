@@ -3,7 +3,7 @@ import { PERSONAL_INFO } from '../data/portfolioData';
 import gsap from 'gsap';
 
 export const Contact: React.FC = () => {
-  const [muscatTime, setMuscatTime] = useState<string>('');
+  const [KolkataTime, setKolkataTime] = useState<string>('');
   const emailRef = useRef<HTMLAnchorElement>(null);
   const magneticButtonRef = useRef<HTMLAnchorElement>(null);
 
@@ -12,18 +12,18 @@ export const Contact: React.FC = () => {
       try {
         const now = new Date();
         const formatter = new Intl.DateTimeFormat('en-GB', {
-          timeZone: 'Asia/Muscat',
+          timeZone: 'Asia/Kolkata',
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
           hour12: false
         });
-        setMuscatTime(formatter.format(now));
+        setKolkataTime(formatter.format(now));
       } catch {
         const d = new Date();
         const utc = d.getTime() + d.getTimezoneOffset() * 60000;
-        const muscatDate = new Date(utc + 3600000 * 4);
-        setMuscatTime(muscatDate.toTimeString().split(' ')[0]);
+        const KolkataDate = new Date(utc + 3600000 * 4);
+        setKolkataTime(KolkataDate.toTimeString().split(' ')[0]);
       }
     };
     updateTime();
@@ -150,10 +150,10 @@ export const Contact: React.FC = () => {
           </div>
 
           <div>
-            <span className="text-[#71717A] uppercase block mb-2">Muscat Station Time</span>
+            <span className="text-[#71717A] uppercase block mb-2">Ahmedabad Station Time</span>
             <div className="flex items-center gap-2 text-[#F4F4F5] text-sm tabular-nums font-semibold">
               <span className="w-2 h-2 rounded-full bg-[#FF4800] animate-pulse" />
-              <span>{muscatTime || '11:21:00'} GST (UTC+4)</span>
+              <span>{KolkataTime || '11:21:00'} GST (UTC+4)</span>
             </div>
             <div className="text-[#71717A] text-[11px] mt-1">
               Coordinates: {PERSONAL_INFO.coordinates}

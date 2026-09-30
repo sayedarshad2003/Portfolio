@@ -11,7 +11,7 @@ export const About: React.FC = () => {
             <span className="text-[#FF4800]">05</span>
             <span>PHILOSOPHY & LOCATION</span>
           </div>
-          <div>MUSCAT / AHMEDABAD</div>
+          <div>AHMEDABAD</div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mt-12 items-start">
@@ -36,8 +36,8 @@ export const About: React.FC = () => {
                 <span className="text-[#F4F4F5]">Multi-Tenant .NET & SQL</span>
               </div>
               <div className="flex justify-between text-[#A1A1AA]">
-                <span>REGIONAL TAX/VAT</span>
-                <span className="text-[#FF4800]">Oman VAT Compliance</span>
+                <span>REGIONAL TAX/GST</span>
+                <span className="text-[#FF4800]">India GST Compliance</span>
               </div>
             </div>
           </div>

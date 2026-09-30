@@ -73,7 +73,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     >
       <div className="flex justify-between items-start text-xs font-mono text-[#71717A] tracking-wider">
         <div>SAIYED ARSHAD</div>
-        <div>23.5880° N, 58.3829° E · MUSCAT</div>
+        <div>22.995870° N, 72.533299° E · Ahmedabad</div>
       </div>
 
       <div ref={textRef} className="max-w-2xl">

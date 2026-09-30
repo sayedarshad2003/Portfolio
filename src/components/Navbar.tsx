@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 export const Navbar: React.FC = () => {
-  const [muscatTime, setMuscatTime] = useState<string>('');
+  const [KolkataTime, setKolkataTime] = useState<string>('');
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
@@ -10,19 +10,19 @@ export const Navbar: React.FC = () => {
       try {
         const now = new Date();
         const formatter = new Intl.DateTimeFormat('en-GB', {
-          timeZone: 'Asia/Muscat',
+          timeZone: 'Asia/Kolkata',
           hour: '2-digit',
           minute: '2-digit',
           second: '2-digit',
           hour12: false
         });
-        setMuscatTime(formatter.format(now));
+        setKolkataTime(formatter.format(now));
       } catch {
         // Fallback for UTC+4
         const d = new Date();
         const utc = d.getTime() + d.getTimezoneOffset() * 60000;
-        const muscatDate = new Date(utc + 3600000 * 4);
-        setMuscatTime(muscatDate.toTimeString().split(' ')[0]);
+        const KolkataDate = new Date(utc + 3600000 * 4);
+        setKolkataTime(KolkataDate.toTimeString().split(' ')[0]);
       }
     };
 
@@ -42,11 +42,10 @@ export const Navbar: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-[#0B0B0C]/85 backdrop-blur-md border-b border-[#27272A]/80 py-3.5'
-          : 'bg-transparent py-5'
-      }`}
+      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+        ? 'bg-[#0B0B0C]/85 backdrop-blur-md border-b border-[#27272A]/80 py-3.5'
+        : 'bg-transparent py-5'
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-8 flex items-center justify-between">
         {/* Zone 1: Single text element wordmark */}
@@ -73,13 +72,13 @@ export const Navbar: React.FC = () => {
           </a>
         </nav>
 
-        {/* Zone 3: 1-2 primary actions (Muscat Time + Contact Action) */}
+        {/* Zone 3: 1-2 primary actions (Kolkata Time + Contact Action) */}
         <div className="flex items-center gap-4 sm:gap-6">
           <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-[#71717A] tabular-nums">
             <span className="w-1.5 h-1.5 rounded-full bg-[#FF4800] animate-pulse" />
-            <span>MUSCAT</span>
+            <span>Ahmedabad</span>
             <span aria-hidden="true">·</span>
-            <span className="text-[#A1A1AA]">{muscatTime || '11:21:00'} GST</span>
+            <span className="text-[#A1A1AA]">{KolkataTime || '11:21:00'} IST</span>
           </div>
 
           <a

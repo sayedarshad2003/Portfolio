@@ -67,7 +67,7 @@ export default function App() {
       {/* Bespoke Easing Cursor */}
       <CustomCursor />
 
-      {/* Top 3-Zone Navigation with Muscat Live Station Time */}
+      {/* Top 3-Zone Navigation with Kolkata Live Station Time */}
       <Navbar />
 
       {/* Main Content Flow */}

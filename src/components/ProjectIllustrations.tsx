@@ -22,7 +22,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           {/* POS Terminal Frame */}
           <rect x="60" y="50" width="460" height="330" rx="10" fill="#141417" stroke="#27272A" strokeWidth="2" />
           <rect x="75" y="65" width="430" height="300" rx="6" fill="#0A0A0C" />
-          
+
           {/* Top terminal bar */}
           <rect x="90" y="80" width="400" height="32" rx="4" fill="#18181C" />
           <circle cx="106" cy="96" r="4" fill="#FF4800" />
@@ -52,7 +52,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           {/* Totals */}
           <text x="100" y="250" fill="#71717A" fontSize="10" fontFamily="var(--font-mono)">SUBTOTAL (EXCL. VAT)</text>
           <text x="430" y="250" fill="#D4D4D8" fontSize="11" fontFamily="var(--font-mono)">61.000</text>
-          
+
           <text x="100" y="272" fill="#71717A" fontSize="10" fontFamily="var(--font-mono)">OMAN VAT (5.00%)</text>
           <text x="430" y="272" fill="#FF4800" fontSize="11" fontFamily="var(--font-mono)">03.050</text>
 
@@ -69,7 +69,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           <rect x="545" y="90" width="195" height="310" rx="8" fill="#161619" stroke="#27272A" strokeWidth="1.5" />
           <rect x="560" y="110" width="165" height="24" rx="3" fill="#222227" />
           <text x="575" y="126" fill="#A1A1AA" fontSize="9" fontFamily="var(--font-mono)">PAYMOB GATEWAY // SYNCED</text>
-          
+
           {/* Thermal Receipt Paper */}
           <rect x="560" y="145" width="165" height="235" rx="3" fill="#F4F4F5" />
           <text x="600" y="170" fill="#0A0A0C" fontSize="10" fontWeight="700" fontFamily="var(--font-mono)">METFLORA POS</text>
@@ -78,7 +78,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           <text x="572" y="206" fill="#18181B" fontSize="8" fontFamily="var(--font-mono)">TRN: 104829104810</text>
           <text x="572" y="220" fill="#18181B" fontSize="8" fontFamily="var(--font-mono)">DATE: 2024-03-12</text>
           <text x="572" y="234" fill="#18181B" fontSize="8" fontFamily="var(--font-mono)">PAYMENT: PAYMOB VISA</text>
-          
+
           <rect x="572" y="246" width="140" height="22" fill="#E4E4E7" />
           <text x="576" y="260" fill="#0A0A0C" fontSize="9" fontWeight="700" fontFamily="var(--font-mono)">PAID: 64.050 OMR</text>
 
@@ -167,7 +167,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           <text x="75" y="352" fill="#71717A" fontSize="10" fontFamily="var(--font-mono)">14:22:01.041</text>
           <text x="175" y="352" fill="#FF4800" fontSize="10" fontFamily="var(--font-mono)">STATION_02</text>
           <text x="270" y="352" fill="#E4E4E7" fontSize="10" fontFamily="var(--font-mono)">Threshold exceeded (01:00:00). Auto-triggered overtime tariff @ 0.08 OMR/min</text>
-          
+
           <text x="75" y="382" fill="#71717A" fontSize="10" fontFamily="var(--font-mono)">14:21:49.882</text>
           <text x="175" y="382" fill="#60A5FA" fontSize="10" fontFamily="var(--font-mono)">HUB_BROADCAST</text>
           <text x="270" y="382" fill="#E4E4E7" fontSize="10" fontFamily="var(--font-mono)">Station 03 toggled state: ACTIVE -&gt; PAUSED (Hold ticket #4910)</text>
@@ -193,7 +193,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
 
           {/* Specimen Tracking Flow */}
           <rect x="50" y="40" width="700" height="420" rx="8" fill="#121316" stroke="#27272A" strokeWidth="1.5" />
-          
+
           <rect x="70" y="60" width="660" height="34" rx="4" fill="#1A1B20" />
           <circle cx="88" cy="77" r="4" fill="#FF4800" />
           <text x="102" y="81" fill="#F4F4F5" fontSize="11" fontFamily="var(--font-mono)">LIMS CORE // SPECIMEN VERIFICATION & ITEXTSHARP PDF PIPELINE</text>
@@ -202,7 +202,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           {/* Left: Barcode Sample Rack */}
           <rect x="70" y="115" width="220" height="325" rx="6" fill="#16171B" stroke="#2C2D33" strokeWidth="1" />
           <text x="90" y="142" fill="#A1A1AA" fontSize="11" fontFamily="var(--font-mono)">SPECIMEN INTAKE</text>
-          
+
           {/* Sample Vials */}
           <rect x="90" y="160" width="180" height="60" rx="4" fill="#1E2026" stroke="#3F3F46" strokeWidth="1" />
           <line x1="95" y1="172" x2="95" y2="208" stroke="#FF4800" strokeWidth="3" />
@@ -227,7 +227,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           {/* Middle: Analysis & QC Parameters */}
           <rect x="310" y="115" width="220" height="325" rx="6" fill="#16171B" stroke="#2C2D33" strokeWidth="1" />
           <text x="330" y="142" fill="#A1A1AA" fontSize="11" fontFamily="var(--font-mono)">ANALYZER QC METRICS</text>
-          
+
           <rect x="330" y="160" width="180" height="50" rx="4" fill="#1A1C22" />
           <text x="340" y="178" fill="#71717A" fontSize="9" fontFamily="var(--font-mono)">HEMOGLOBIN (Hb)</text>
           <text x="340" y="198" fill="#FFFFFF" fontSize="14" fontWeight="600" fontFamily="var(--font-mono)">14.8 g/dL</text>
@@ -247,11 +247,11 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           <rect x="550" y="115" width="180" height="325" rx="6" fill="#F4F4F5" />
           <rect x="565" y="130" width="150" height="15" fill="#18181B" />
           <text x="572" y="141" fill="#FFFFFF" fontSize="8" fontWeight="700" fontFamily="var(--font-mono)">DIAGNOSTIC REPORT</text>
-          
+
           <line x1="565" y1="155" x2="715" y2="155" stroke="#E4E4E7" strokeWidth="1" />
           <text x="568" y="172" fill="#52525B" fontSize="7" fontFamily="var(--font-mono)">PATIENT: 40182-OMN</text>
           <text x="568" y="185" fill="#52525B" fontSize="7" fontFamily="var(--font-mono)">PHYSICIAN: DR. K. AL-HINAI</text>
-          
+
           <rect x="565" y="195" width="150" height="120" fill="#EFEFEF" rx="3" />
           <line x1="570" y1="210" x2="710" y2="210" stroke="#CBD5E1" strokeWidth="1" />
           <line x1="570" y1="230" x2="710" y2="230" stroke="#CBD5E1" strokeWidth="1" />
@@ -271,7 +271,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
         <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
           <rect width="800" height="500" fill="#0C0C0E" />
           <rect x="50" y="40" width="700" height="420" rx="8" fill="#131317" stroke="#27272A" strokeWidth="1.5" />
-          
+
           {/* Header */}
           <rect x="70" y="60" width="660" height="34" rx="4" fill="#1B1C22" />
           <circle cx="88" cy="77" r="4" fill="#FF4800" />
@@ -348,7 +348,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
         <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
           <rect width="800" height="500" fill="#0D0D10" />
           <rect x="50" y="40" width="700" height="420" rx="8" fill="#131317" stroke="#27272A" strokeWidth="1.5" />
-          
+
           <rect x="70" y="60" width="660" height="34" rx="4" fill="#1B1C22" />
           <circle cx="88" cy="77" r="4" fill="#FF4800" />
           <text x="102" y="81" fill="#F4F4F5" fontSize="11" fontFamily="var(--font-mono)">HRMS ENTERPRISE // MULTI-BRANCH ATTENDANCE & PAYROLL MATRIX</text>
@@ -357,7 +357,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
           {/* Org Tree */}
           <rect x="70" y="115" width="290" height="325" rx="6" fill="#16171D" stroke="#282930" strokeWidth="1" />
           <text x="90" y="142" fill="#A1A1AA" fontSize="11" fontFamily="var(--font-mono)">MULTI-BRANCH RBAC HIERARCHY</text>
-          
+
           <rect x="90" y="165" width="250" height="42" rx="4" fill="#1F2028" stroke="#3F3F46" strokeWidth="1" />
           <text x="105" y="184" fill="#FFFFFF" fontSize="11" fontWeight="600" fontFamily="var(--font-sans)">Muscat Corporate HQ</text>
           <text x="105" y="198" fill="#FF4800" fontSize="9" fontFamily="var(--font-mono)">ROLE: SUPER_ADMIN // ALL_ACCESS</text>
@@ -413,7 +413,7 @@ export const ProjectIllustration: React.FC<IllustrationProps> = ({ id, className
         <svg viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
           <rect width="800" height="500" fill="#0B0B0D" />
           <rect x="50" y="40" width="700" height="420" rx="8" fill="#131316" stroke="#27272A" strokeWidth="1.5" />
-          
+
           <rect x="70" y="60" width="660" height="34" rx="4" fill="#1A1B20" />
           <circle cx="88" cy="77" r="4" fill="#FF4800" />
           <text x="102" y="81" fill="#F4F4F5" fontSize="11" fontFamily="var(--font-mono)">CONTACTLESS QR & WEBSOCKET KITCHEN DISPATCH (KDS)</text>

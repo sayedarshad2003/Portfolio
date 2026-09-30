@@ -3,14 +3,14 @@ import { Project, ExperienceItem, EducationItem } from '../types';
 export const PERSONAL_INFO = {
   name: "Saiyed Arshad",
   title: "Software Developer",
-  location: "Muscat, Oman",
-  origin: "Ahmedabad, Gujarat",
+  location: "Ahmedabad, Gujarat, India",
+  origin: "Jaipur, Rajasthan, India",
   email: "arshadsayed232@gmail.com",
   phone: "+91 9413747365",
-  github: "https://github.com/arshadsayed",
-  linkedin: "https://linkedin.com/in/saiyed-arshad",
-  coordinates: "23.5880° N, 58.3829° E",
-  timezone: "Asia/Muscat",
+  github: "https://github.com/sayedarshad2003",
+  linkedin: "https://www.linkedin.com/in/arshad-saiyed-3a9ba0289",
+  coordinates: "22.995870° N, 72.533299° E",
+  timezone: "Asia/Kolkata",
   experienceYears: "3+",
   summary: "Results-driven Software Developer with 3+ years of experience designing and delivering enterprise-grade web applications using ASP.NET, C#, and SQL Server. Proven expertise in building HRMS, accounting platforms, real-time dashboards, POS, and LIMS solutions for multi-tenant business environments."
 };
@@ -167,7 +167,7 @@ export const EXPERIENCE: ExperienceItem[] = [
   {
     company: "Palansoft Private Limited",
     role: "Software Developer",
-    location: "Ahmedabad, Gujarat / Muscat Market",
+    location: "Ahmedabad, Gujarat",
     period: "May 2022 – Present",
     highlights: [
       "Architected and delivered full-stack enterprise web applications using ASP.NET WebForms and ASP.NET Core MVC, serving multi-tenant clients across retail, hospitality, and laboratory sectors.",
@@ -184,10 +184,15 @@ export const EXPERIENCE: ExperienceItem[] = [
 
 export const EDUCATION: EducationItem[] = [
   {
-    degree: "Bachelor of Science in Computer Science",
-    institution: "University of Technology",
+    degree: "Bachelor of Computer Application",
+    institution: "University of Technology, Jaipur",
     year: "2026"
-  }
+  },
+  {
+    degree: "Master of Computer Application",
+    institution: "SVGU, Jaipur (Expected)",
+    year: "2028"
+  },
 ];
 
 export const TECHNICAL_SKILLS = [
