@@ -1,170 +1,187 @@
 # Saiyed Arshad — Software Developer Portfolio
 
-A responsive, animated personal portfolio for **Saiyed Arshad**, a software developer focused on enterprise web applications, ASP.NET, C#, SQL Server, and real-time systems.
+[![React](https://img.shields.io/badge/React-19.0-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-7.0-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Vite](https://img.shields.io/badge/Vite-8.3-646CFF?logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.3-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+[![GSAP](https://img.shields.io/badge/GSAP-3.15-88CE02?logo=greensock&logoColor=white)](https://greensock.com/gsap/)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 
-Built with React, TypeScript, Vite, Tailwind CSS, GSAP, and Lenis.
+A modern, high-performance portfolio website for **Saiyed Arshad**, a results-driven **Software Developer** with **3+ years of enterprise application experience**. Focused on building scalable enterprise web applications, real-time telemetry systems, multi-tenant POS/ERP platforms, financial double-entry accounting engines, and diagnostic lab systems using **ASP.NET Core**, **C#**, **SQL Server**, and modern frontend technologies.
 
-## Highlights
+---
 
-- Dark, responsive portfolio interface with a custom cursor and loading screen
-- Smooth scrolling and scroll-triggered animations
-- Project showcase with detailed case-study modals
-- Experience, technical skills, about, and contact sections
-- Links to email, GitHub, and LinkedIn profiles
-- Accessibility-aware motion handling: reduced-motion preferences are respected
+## 🌟 Key Highlights & UI Features
 
-## Portfolio content
+- 🎨 **Modern Dark Aesthetics**: Premium dark theme (`#0B0B0C`) with high-contrast accenting (`#FF4800`) and custom typography.
+- ⚡ **Smooth Scroll & Animations**: Powered by **Lenis** smooth scrolling synchronized with **GSAP ScrollTrigger** and **Motion** (Framer Motion engine).
+- ⏱️ **Live Muscat Station Clock**: Real-time timezone widget (`Asia/Muscat`, UTC+4) with live lat/long coordinates (`23.5880° N, 58.3829° E`).
+- 🔍 **Interactive Case Study Modals**: Deep-dive project breakdowns detailing business problems, architectural solutions, tech stack, and quantitative impact metrics.
+- 🎯 **Bespoke Custom Cursor & Preloader**: Fluid custom cursor with spring dynamics and full-screen counter loading sequence.
+- ♿ **Accessibility & Motion Preference**: Automatic fallback detection for `prefers-reduced-motion` to ensure smooth experience across all user settings.
+- 📱 **Fully Responsive Layout**: Mobile-first design tailored for screens from desktop monitors down to mobile viewports.
 
-The portfolio presents enterprise application work including:
+---
 
-- **Crystal POS & MetFlora** — multi-tenant retail POS and ERP platform
-- **GameZone Telemetry & Billing** — live booking, billing, and occupancy system
-- **LIMS Diagnostic System** — laboratory sample tracking and reporting platform
-- **Double-Entry Accounting System** — VAT registers and financial reporting
-- **Enterprise HRMS Platform** — workforce, payroll, leave, and access management
-- **Restaurant QR & Kitchen Display** — contactless ordering and real-time kitchen dispatch
+## 💼 Showcase Projects & Case Studies
 
-## Technology stack
+The portfolio highlights six enterprise projects delivered for multi-tenant business environments across retail, hospitality, finance, healthcare, and workforce management:
 
-| Area | Technologies |
-| --- | --- |
-| Framework | React 19, TypeScript, Vite |
-| Styling | Tailwind CSS 4, custom CSS |
-| Animation | GSAP, ScrollTrigger, Lenis, Motion |
-| Icons | Lucide React |
-| Package manager | npm (a Bun lockfile is also included) |
+| Project | Domain | Technologies | Key Highlights |
+| :--- | :--- | :--- | :--- |
+| **Crystal POS & MetFlora** | Enterprise Retail ERP | ASP.NET Core, C#, SQL Server, SignalR, Paymob, ClosedXML | Multi-tenant bilingual (Arabic/English) POS with Paymob payments & >40% query latency reduction. |
+| **GameZone Telemetry & Billing** | Real-Time Telemetry | SignalR, WebSockets, ASP.NET Core, C#, SQL Server | Live floor occupancy dashboard with sub-second seat status broadcasting & automated overtime billing. |
+| **LIMS Diagnostic System** | Healthcare / Pathology | ASP.NET, C#, SQL Server, iTextSharp, REST APIs | End-to-end barcode sample custody verification & automated tamper-evident PDF patient reports. |
+| **Double-Entry Accounting** | Financial Systems | ASP.NET Core MVC, C#, SQL Server, ClosedXML, ADO.NET | Zero-discrepancy ledger validation with 100% automated VAT/tax registers & financial exports. |
+| **Enterprise HRMS Platform** | Human Capital | ASP.NET Core, C#, SQL Server, Telerik Reporting, LINQ | Unified workforce management across multi-branch corporations with RBAC & automated payroll runs. |
+| **Restaurant QR & Dispatch** | Hospitality Tech | ASP.NET Core, WebSockets, JavaScript, HTML5/CSS3 | Contactless QR menu ordering with real-time kitchen display dispatch via duplex WebSockets. |
 
-## Prerequisites
+---
 
-Install the following before running the project:
+## 🛠️ Technical Stack & Architecture
 
-- [Node.js](https://nodejs.org/) **20.19+ or 22.12+** (required by Vite 8)
-- npm (installed with Node.js)
-- Git
+### Portfolio Tech Stack
 
-Verify that the tools are installed:
+- **Framework**: [React 19](https://react.dev/) & [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool**: [Vite 8](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & Custom CSS
+- **Animation & Physics**: [GSAP 3](https://greensock.com/gsap/) + ScrollTrigger, [Lenis](https://lenis.darkroom.engineering/) Smooth Scroll, [Motion](https://motion.dev/)
+- **Icons**: [Lucide React](https://lucide.dev/)
 
+### Developer Enterprise Skill Stack
+
+- **Backend & Frameworks**: C#, ASP.NET Core MVC, ASP.NET WebForms, ADO.NET, LINQ, Entity Framework, REST APIs
+- **Database & Storage**: SQL Server, T-SQL, Stored Procedures, CTEs, Query Optimization, Schema Design, SSMS
+- **Real-Time & Frontend**: SignalR, WebSockets, JavaScript, HTML5, CSS3, Bootstrap 4/5, jQuery, AJAX, React Native (Basic)
+- **Reporting & Utilities**: ClosedXML (Excel Engine), iTextSharp (PDF Generation), Telerik Reporting, Paymob Payment Gateway
+- **DevOps & Infrastructure**: IIS Web Server, Git & GitHub, Visual Studio, FTP/SSH Deployment Pipelines
+
+---
+
+## 🚀 Quick Start Guide
+
+### Prerequisites
+
+Ensure you have the following installed on your machine:
+
+- **Node.js**: `v20.19.0+` or `v22.12.0+` (required by Vite 8)
+- **npm**: Included with Node.js (`v10+`)
+- **Git**: `v2.x+`
+
+Verify installations:
 ```bash
 node --version
 npm --version
 git --version
 ```
 
-## Clone and run
+### Installation & Local Setup
 
-Open a terminal (PowerShell, Command Prompt, Git Bash, or a macOS/Linux terminal) and run:
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/arshadsayed/Portfolio.git
+   cd Portfolio
+   ```
 
-```bash
-git clone https://github.com/sayedarshad2003/Portfolio.git
-cd Portfolio
-npm install
-npm run dev
-```
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Then open the URL printed by Vite in your browser. By default, this project runs at:
+3. **Start the local development server**:
+   ```bash
+   npm run dev
+   ```
 
-```text
-http://localhost:3000
-```
-
-To expose the development server to other devices on your local network, use the same command above and open `http://<your-computer-ip>:3000` from the other device.
-
-### Windows PowerShell commands
-
-```powershell
-git clone https://github.com/sayedarshad2003/Portfolio.git
-Set-Location Portfolio
-npm install
-npm run dev
-```
-
-### macOS/Linux commands
-
-```bash
-git clone https://github.com/sayedarshad2003/Portfolio.git
-cd Portfolio
-npm install
-npm run dev
-```
-
-## Available commands
-
-| Command | Purpose |
-| --- | --- |
-| `npm run dev` | Starts the Vite development server on port 3000. |
-| `npm run build` | Creates an optimized production build in `dist/`. |
-| `npm run preview` | Serves the production build locally after `npm run build`. |
-| `npm run lint` | Runs the TypeScript type check without emitting files. |
-
-Typical production-build verification:
-
-```bash
-npm run lint
-npm run build
-npm run preview
-```
-
-## Environment variables
-
-The current portfolio frontend does **not** require an environment variable to run.
-
-An [`.env.example`](.env.example) file is included for Gemini/AI Studio integrations. If you later add Gemini API calls, create a local environment file and add your key:
-
-```bash
-cp .env.example .env.local
-```
-
-On Windows PowerShell:
-
-```powershell
-Copy-Item .env.example .env.local
-```
-
-Keep real API keys in `.env.local` only; never commit them to GitHub. Vite exposes browser-side variables only when they use the `VITE_` prefix, so any future client-side configuration should follow that convention.
-
-## Customizing the portfolio
-
-Most content can be edited in [`src/data/portfolioData.ts`](src/data/portfolioData.ts):
-
-- Personal details and social links
-- Project case studies
-- Work experience and education
-- Technical skills
-
-The page layout is assembled in [`src/App.tsx`](src/App.tsx), while individual sections live in [`src/components`](src/components).
-
-## Project structure
-
-```text
-Portfolio/
-├── src/
-│   ├── components/          # Portfolio sections and UI components
-│   ├── data/
-│   │   └── portfolioData.ts # Profile, projects, experience, and skills
-│   ├── App.tsx              # Page composition and animation setup
-│   ├── index.css            # Global styles
-│   └── main.tsx             # Application entry point
-├── .env.example             # Optional environment-variable template
-├── package.json             # Scripts and dependencies
-└── vite.config.ts           # Vite configuration
-```
-
-## Deployment
-
-Create the deployable static files with:
-
-```bash
-npm run build
-```
-
-Upload the generated `dist/` folder to any static hosting provider, such as GitHub Pages, Netlify, Vercel, Cloudflare Pages, or an IIS static site. Configure the host's build command as `npm run build` and its publish/output directory as `dist` when it builds the project for you.
-
-## Contact
-
-- Email: [arshadsayed232@gmail.com](mailto:arshadsayed232@gmail.com)
-- GitHub: [arshadsayed](https://github.com/arshadsayed)
-- LinkedIn: [saiyed-arshad](https://linkedin.com/in/saiyed-arshad)
+4. **Access the app**:
+   Open your browser and navigate to `http://localhost:3000`.
 
 ---
 
-Built to showcase enterprise software development work across retail, hospitality, finance, healthcare, and HR systems.
+## 📜 Available NPM Scripts
+
+| Script | Command | Purpose |
+| :--- | :--- | :--- |
+| `npm run dev` | `vite --port=3000 --host=0.0.0.0` | Launches local development server on port 3000 |
+| `npm run build` | `vite build` | Compiles and optimizes assets into production `dist/` folder |
+| `npm run preview` | `vite preview` | Serves the production build locally for verification |
+| `npm run lint` | `tsc --noEmit` | Runs strict TypeScript type checking |
+| `npm run clean` | `rm -rf dist server.js` | Cleans up previous build outputs |
+
+---
+
+## 📁 Project Directory Structure
+
+```text
+my-new-protfolio/
+├── src/
+│   ├── components/            # UI Components & Sections
+│   │   ├── About.tsx          # About developer section & background
+│   │   ├── CaseStudyModal.tsx # Full modal for deep project inspection
+│   │   ├── Contact.tsx        # Contact form, location & social links
+│   │   ├── CustomCursor.tsx   # Custom dynamic cursor implementation
+│   │   ├── Experience.tsx     # Work history & career achievements
+│   │   ├── Hero.tsx           # Interactive main headline section
+│   │   ├── Navbar.tsx         # 3-Zone navigation bar with live clock
+│   │   ├── Preloader.tsx      # Full-screen counter loader animation
+│   │   ├── ProjectIllustrations.tsx # Visual SVG graphics for projects
+│   │   ├── SelectedWork.tsx   # Project grid with filtering & modal triggers
+│   │   └── SkillsMarquee.tsx  # Infinite scrolling marquee of skills
+│   ├── data/
+│   │   └── portfolioData.ts   # Single source of truth for personal data & projects
+│   ├── types.ts               # TypeScript interfaces & definitions
+│   ├── App.tsx                # Main App entry, Lenis & GSAP orchestration
+│   ├── index.css              # Global Tailwind CSS imports & custom styles
+│   └── main.tsx               # DOM mounting entry point
+├── .env.example               # Environment variables template
+├── index.html                 # HTML shell & web fonts
+├── package.json               # Dependencies & scripts configuration
+├── tsconfig.json              # TypeScript compiler configuration
+└── vite.config.ts             # Vite bundler configuration
+```
+
+---
+
+## ⚙️ Customization & Data Maintenance
+
+All text content, project details, work history, and contact information are decoupled from components into a single configuration file:
+
+📁 **[`src/data/portfolioData.ts`](src/data/portfolioData.ts)**
+
+To update portfolio contents:
+1. **Personal Information**: Edit `PERSONAL_INFO` object (Name, Title, Location, Bio, Social links).
+2. **Projects & Case Studies**: Modify or append items in the `PROJECTS` array.
+3. **Experience Timeline**: Update the `EXPERIENCE` list.
+4. **Skills Categories**: Update `TECHNICAL_SKILLS` categories and skill sets.
+
+---
+
+## 📦 Production Deployment
+
+To create an optimized production bundle:
+
+```bash
+npm run build
+```
+
+This generates a static distribution folder at `dist/`. You can deploy this folder to any modern static hosting provider:
+
+- **Vercel / Netlify / Cloudflare Pages**: Set build command to `npm run build` and output directory to `dist`.
+- **GitHub Pages**: Deploy contents of `dist/` to your `gh-pages` branch.
+- **IIS Web Server**: Move `dist/` contents into the IIS site root directory.
+
+---
+
+## 📬 Contact & Connect
+
+**Saiyed Arshad** — *Software Developer*
+
+- 📍 **Location**: Ahmedabad, Gujarat (Origin: Jaipur, Rajasthan, India)
+- 📧 **Email**: [arshadsayed232@gmail.com](mailto:arshadsayed232@gmail.com)
+- 📞 **Phone**: [+91 9413747365](tel:+919413747365)
+- 💻 **GitHub**: [github.com/arshadsayed](https://github.com/arshadsayed)
+- 💼 **LinkedIn**: [linkedin.com/in/saiyed-arshad](https://linkedin.com/in/saiyed-arshad)
+
+---
+
+&copy; 2026 Saiyed Arshad. All rights reserved.
